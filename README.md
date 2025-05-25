@@ -76,9 +76,9 @@ streamlit run Home.py
 
 Downloadable sample CSV files are available within the app via Google Drive links.
 
-## 🔧 Bővítési lehetőségek
+## 🔧 Future Enhancements
 
-Az alkalmazás további fejlesztési lehetőségei:
+The application could be further developed with these features:
 
-1. **Ügyfélszolgálatos kolléga értékelése**: Minden beérkező visszajelzés esetén az ügyfélszolgálatos kolléga is kapjon automatikus teljesítményértékelést a beszélgetés alapján.
-2. **Hozzárendelt kolléga nyomon követése**: Az adott ügyhöz legyen naplózva és megjelenítve, hogy mely ügyfélszolgálatos kolléga volt rendelve, így könnyebb legyen a felelősség és az esettörténet követése.
+1. **Customer Service Agent Evaluation**: Automatically provide performance evaluations for the customer service agent for each incoming feedback based on the conversation.
+2. **Assigned Agent Tracking**: Log and display which customer service agent was assigned to each case, facilitating accountability and case history tracking.
