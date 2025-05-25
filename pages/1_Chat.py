@@ -22,7 +22,7 @@ from pandasai.core.response.chart import ChartResponse
 ChartResponse.show = lambda self, *args, **kwargs: None
 
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
 export_dir = "exports/charts"
 os.makedirs(export_dir, exist_ok=True)
