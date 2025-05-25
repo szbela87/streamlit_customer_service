@@ -17,11 +17,7 @@ st.markdown("""
 ---
 
 📂 **Source code available on [GitHub](https://github.com/szbela87/streamlit_customer_service)**.
-""")
 
-# Future enhancements section
-st.markdown("""
----
 ## 🔧 Future Enhancements
 
 - **Customer Service Agent Evaluation**: Automatically provide performance evaluations for the customer service agent for each incoming feedback based on the conversation.
