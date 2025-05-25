@@ -69,11 +69,3 @@ streamlit run Home.py
 ## 📁 Sample CSV Files
 
 Downloadable sample CSV files are available within the app via Google Drive links.
-
-## 👤 Author
-
-Developed by [Your Name].
-
-## 📄 License
-
-This project is licensed under the MIT License.
