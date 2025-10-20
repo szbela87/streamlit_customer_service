@@ -30,9 +30,16 @@ cd your-repo-name
 
 ### 2. (Optional) Create and activate a virtual environment
 
+**Option A: Using venv**
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+**Option B: Using conda**
+```bash
+conda create -n streamlit-apps python=3.10 -y
+conda activate streamlit-apps
 ```
 
 ### 3. Install dependencies
