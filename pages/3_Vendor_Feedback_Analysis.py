@@ -123,19 +123,18 @@ with tabs[0]:
 
     # Ha tényleg van adat, csak akkor csoportosítunk
     if df_raw is not None:
-        # A number_input most már kap egy key-t, állapotot tarthat
         max_diff = st.number_input(
-            "Max time (in hours) for grouping:", 1, 48, 8, key="max_diff"
+            "Max time (in hours) for grouping:", 1, 48, 8
         )
 
-        # Ezt is session_state-ből érdemes építeni, hogy ne fusson újra fölöslegesen
-        if "df_groups" not in st.session_state or st.session_state.max_diff != max_diff:
+        if st.button("Apply Grouping", key="apply_grouping"):
             df_groups = merge_conversations(df_raw, max_diff_hours=max_diff)
             df_groups.drop(columns=['reply_to'], inplace=True)
             st.session_state.df_groups = df_groups
+            st.success("Grouping applied successfully!")
 
-        st.success("Grouping is finished.")
-        st.dataframe(st.session_state.df_groups)
+        if "df_groups" in st.session_state:
+            st.dataframe(st.session_state.df_groups)
     else:
         st.info("Upload a CSV file or click 'Load sample CSV' to get started.")
 

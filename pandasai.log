@@ -3795,3 +3795,413 @@ result = {'type': 'dataframe', 'value': negative_feedback_df}
 print(result['value'])
 2025-10-20 18:00:09 [INFO] Response generated successfully.
 2025-10-20 18:00:14 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 18:08:53 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Current Question: 
+2025-10-20 18:08:53 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 18:08:53 [INFO] Prompt ID: 7cf36e0b-1ca3-4497-ab77-badf24114dbc
+2025-10-20 18:08:53 [INFO] Generating new code...
+2025-10-20 18:08:53 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Current Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 18:09:01 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Current Question: 
+2025-10-20 18:09:01 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 18:09:01 [INFO] Prompt ID: 06fd3ba8-dbe3-47f4-8541-b2d0b86de19d
+2025-10-20 18:09:01 [INFO] Generating new code...
+2025-10-20 18:09:01 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Current Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 18:09:09 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 18:09:09 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+
+# Function to analyze the data based on the current question
+def analyze_data():
+    # SQL query to count the number of negative messages sent per vendor
+    sql_query = """
+    SELECT Vendor, COUNT(*) AS Negative_Messages_Count
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    WHERE Semantic = 'negative'
+    GROUP BY Vendor
+    ORDER BY Negative_Messages_Count DESC
+    """
+
+    # Execute the SQL query and retrieve the result
+    result_df = execute_sql_query(sql_query)
+
+    # Declare result variable as a dictionary of type and value
+    result = {
+        "type": "dataframe",
+        "value": result_df
+    }
+    
+    return result
+
+# Call the analyze_data function and get the result
+result = analyze_data()
+2025-10-20 18:09:09 [INFO] Validating code requirements...
+2025-10-20 18:09:09 [INFO] Code validation successful.
+2025-10-20 18:09:09 [INFO] Cleaning the generated code...
+2025-10-20 18:09:09 [INFO] Executing code: import pandas as pd
+
+
+def analyze_data():
+    sql_query = """
+    SELECT Vendor, COUNT(*) AS Negative_Messages_Count
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    WHERE Semantic = 'negative'
+    GROUP BY Vendor
+    ORDER BY Negative_Messages_Count DESC
+    """
+    result_df = execute_sql_query(sql_query)
+    result = {'type': 'dataframe', 'value': result_df}
+    return result
+
+
+result = analyze_data()
+2025-10-20 18:09:09 [INFO] Response generated successfully.
+2025-10-20 18:09:09 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 18:09:09 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# SQL query to get the count of negative messages by each Vendor
+sql_query = """
+SELECT Vendor, COUNT(*) as complaint_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+GROUP BY Vendor
+ORDER BY complaint_count DESC
+"""
+
+# Execute the SQL query and obtain a DataFrame
+complaints_df = execute_sql_query(sql_query)
+
+# Declare result variable with type and value
+result = {
+    "type": "dataframe",
+    "value": complaints_df
+}
+2025-10-20 18:09:09 [INFO] Validating code requirements...
+2025-10-20 18:09:09 [INFO] Code validation successful.
+2025-10-20 18:09:09 [INFO] Cleaning the generated code...
+2025-10-20 18:09:09 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT Vendor, COUNT(*) as complaint_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+GROUP BY Vendor
+ORDER BY complaint_count DESC
+"""
+complaints_df = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': complaints_df}
+2025-10-20 18:09:09 [INFO] Response generated successfully.
+2025-10-20 18:09:13 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 18:09:31 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity:
+
+---
+
+### Vendor Complaint Counts
+
+The table below displays the number of complaints received for each vendor:
+
+| Vendor  | Complaint Count |
+|---------|-----------------|
+| LG      | 19              |
+| Apple   | 16              |
+| Dell    | 15              |
+| Sony    | 11              |
+| HP      | 11              |
+| Samsung | 10              |
+| Lenovo  | 10              |
+| Asus    | 7               |
+
+--- 
+
+This table provides a clear view of the complaint counts associated with each vendor.
+
+Current Question: Please create a bar plot about this.
+2025-10-20 18:09:31 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 18:09:31 [INFO] Prompt ID: d8b68fb1-5165-4e66-9a82-b7c0c92a674f
+2025-10-20 18:09:31 [INFO] Generating new code...
+2025-10-20 18:09:31 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity:
+
+---
+
+### Vendor Complaint Counts
+
+The table below displays the number of complaints received for each vendor:
+
+| Vendor  | Complaint Count |
+|---------|-----------------|
+| LG      | 19              |
+| Apple   | 16              |
+| Dell    | 15              |
+| Sony    | 11              |
+| HP      | 11              |
+| Samsung | 10              |
+| Lenovo  | 10              |
+| Asus    | 7               |
+
+--- 
+
+This table provides a clear view of the complaint counts associated with each vendor.
+
+Current Question: Please create a bar plot about this.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 18:09:39 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 18:09:39 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Execute the SQL query to aggregate and sort complaint data by vendor
+sql_query = """
+    SELECT Vendor, COUNT(*) AS Complaint_Count
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    GROUP BY Vendor
+    ORDER BY Complaint_Count DESC
+"""
+
+# Use the provided function to execute the SQL query and get the result as a DataFrame
+complaints_df = execute_sql_query(sql_query)
+
+# Create a bar plot
+plt.figure(figsize=(10, 6))
+plt.bar(complaints_df['Vendor'], complaints_df['Complaint_Count'], color='skyblue')
+plt.title('Vendor Complaint Counts')
+plt.xlabel('Vendor')
+plt.ylabel('Complaint Count')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Save the plot as an image file
+plt.savefig("vendor_complaint_counts.png")
+
+# Display the plot
+plt.show()
+
+# Declare result variable as a dictionary
+result = { "type": "plot", "value": "vendor_complaint_counts.png" }
+2025-10-20 18:09:39 [INFO] Validating code requirements...
+2025-10-20 18:09:39 [INFO] Code validation successful.
+2025-10-20 18:09:39 [INFO] Cleaning the generated code...
+2025-10-20 18:09:39 [INFO] Executing code: import pandas as pd
+import matplotlib.pyplot as plt
+sql_query = """
+    SELECT Vendor, COUNT(*) AS Complaint_Count
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    GROUP BY Vendor
+    ORDER BY Complaint_Count DESC
+"""
+complaints_df = execute_sql_query(sql_query)
+plt.figure(figsize=(10, 6))
+plt.bar(complaints_df['Vendor'], complaints_df['Complaint_Count'], color='skyblue')
+plt.title('Vendor Complaint Counts')
+plt.xlabel('Vendor')
+plt.ylabel('Complaint Count')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('exports/charts/temp_chart_75b5108d-3f38-4d9f-9ef5-43722e599108.png')
+result = {'type': 'plot', 'value': 'exports/charts/temp_chart_75b5108d-3f38-4d9f-9ef5-43722e599108.png'}
+2025-10-20 18:09:39 [INFO] Response generated successfully.
+2025-10-20 18:09:43 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
