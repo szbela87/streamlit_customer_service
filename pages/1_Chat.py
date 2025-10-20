@@ -83,16 +83,47 @@ if data is not None:
         st.session_state.history = []
 
     st.subheader("Ask a question about the CSV:")
+
+    # Example questions
+    st.markdown("**Example questions (click to use):**")
+    example_questions = [
+        "Which vendor received the most negative feedback?",
+        "Create a nice bar diagram showing the number of negative feedbacks per vendor.",
+        "How many conversations mention delivery issues?",
+        "What percentage of feedback is negative for each vendor?"
+    ]
+
+    cols = st.columns(len(example_questions))
+    for idx, question in enumerate(example_questions):
+        with cols[idx]:
+            if st.button(question, key=f"example_{idx}", use_container_width=True):
+                st.session_state.selected_question = question
+
     user_prompt = st.text_area(
-        "Question:", placeholder="E.g.: Which vendor received the most negative feedback?"
+        "Question:",
+        placeholder="E.g.: Which vendor received the most negative feedback?",
+        value=st.session_state.get("selected_question", "")
     )
+
+    # Clear selected question after it's been used
+    if "selected_question" in st.session_state:
+        del st.session_state.selected_question
 
     if st.button("Send", key="chat_send"):
         with st.spinner("AI is working..."):
             llm = LiteLLM(model=model)
             sdf = SmartDataframe(data, config={"llm": llm, "save_charts": True})
             prev = set(glob.glob(f"{export_dir}/temp_chart*.png"))
-            full_prompt = f"{system_prompt} Question: {user_prompt}"
+
+            # Build context from last 3 messages
+            context = ""
+            if st.session_state.history:
+                recent_history = st.session_state.history[-3:]  # Last 3 messages
+                context = "Previous conversation:\n"
+                for i, turn in enumerate(recent_history, 1):
+                    context += f"Q{i}: {turn['question']}\nA{i}: {turn['answer']}\n\n"
+
+            full_prompt = f"{system_prompt}\n\n{context}Current Question: {user_prompt}"
             answer_text = sdf.chat(full_prompt)
 
             if beautify_answer:

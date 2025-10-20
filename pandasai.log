@@ -1,0 +1,3797 @@
+2025-10-20 17:37:45 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Which vendor has the most negative feedbacks?
+2025-10-20 17:37:45 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:37:45 [INFO] Prompt ID: 77decd6e-6a29-45e3-99a3-fadc211bc4fa
+2025-10-20 17:37:45 [INFO] Generating new code...
+2025-10-20 17:37:45 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Which vendor has the most negative feedbacks?
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:37:46 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-10-20 17:37:46 [INFO] An error occurred during code generation: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-10-20 17:37:46 [INFO] Stack Trace:
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+2025-10-20 17:37:46 [INFO] Execution failed with error: Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 159, in generate_code_with_retries
+    return self.generate_code(query)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 104, in generate_code
+    code = self._code_generator.generate_code(prompt)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 47, in generate_code
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+2025-10-20 17:37:46 [INFO] Using Prompt: <table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+The user asked the following question:
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Which vendor has the most negative feedbacks?
+
+You generated the following Python code:
+None
+
+However, it resulted in the following error:
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 159, in generate_code_with_retries
+    return self.generate_code(query)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 104, in generate_code
+    code = self._code_generator.generate_code(prompt)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 47, in generate_code
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+
+Fix the python code above and return the new python code but the code generated should use execute_sql_query function
+2025-10-20 17:37:46 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-10-20 17:37:46 [INFO] An error occurred during code generation: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-10-20 17:37:46 [INFO] Stack Trace:
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+2025-10-20 17:37:46 [INFO] Retrying Code Generation (1/3)...
+2025-10-20 17:37:46 [INFO] Execution failed with error: Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 159, in generate_code_with_retries
+    return self.generate_code(query)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 104, in generate_code
+    code = self._code_generator.generate_code(prompt)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 47, in generate_code
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+2025-10-20 17:37:46 [INFO] Using Prompt: <table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+The user asked the following question:
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Which vendor has the most negative feedbacks?
+
+You generated the following Python code:
+None
+
+However, it resulted in the following error:
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 159, in generate_code_with_retries
+    return self.generate_code(query)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 104, in generate_code
+    code = self._code_generator.generate_code(prompt)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 47, in generate_code
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+
+Fix the python code above and return the new python code but the code generated should use execute_sql_query function
+2025-10-20 17:37:46 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-10-20 17:37:46 [INFO] An error occurred during code generation: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-10-20 17:37:46 [INFO] Stack Trace:
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+2025-10-20 17:37:46 [INFO] Retrying Code Generation (2/3)...
+2025-10-20 17:37:46 [INFO] Execution failed with error: Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 159, in generate_code_with_retries
+    return self.generate_code(query)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 104, in generate_code
+    code = self._code_generator.generate_code(prompt)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 47, in generate_code
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+2025-10-20 17:37:46 [INFO] Using Prompt: <table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+The user asked the following question:
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Which vendor has the most negative feedbacks?
+
+You generated the following Python code:
+None
+
+However, it resulted in the following error:
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 159, in generate_code_with_retries
+    return self.generate_code(query)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 104, in generate_code
+    code = self._code_generator.generate_code(prompt)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 47, in generate_code
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+
+Fix the python code above and return the new python code but the code generated should use execute_sql_query function
+2025-10-20 17:37:47 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-10-20 17:37:47 [INFO] An error occurred during code generation: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-10-20 17:37:47 [INFO] Stack Trace:
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+2025-10-20 17:37:47 [INFO] Retrying Code Generation (3/3)...
+2025-10-20 17:37:47 [INFO] Execution failed with error: Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 159, in generate_code_with_retries
+    return self.generate_code(query)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 104, in generate_code
+    code = self._code_generator.generate_code(prompt)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 47, in generate_code
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+2025-10-20 17:37:47 [INFO] Using Prompt: <table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+The user asked the following question:
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Which vendor has the most negative feedbacks?
+
+You generated the following Python code:
+None
+
+However, it resulted in the following error:
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 159, in generate_code_with_retries
+    return self.generate_code(query)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/agent/base.py", line 104, in generate_code
+    code = self._code_generator.generate_code(prompt)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 47, in generate_code
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+
+Fix the python code above and return the new python code but the code generated should use execute_sql_query function
+2025-10-20 17:37:47 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-10-20 17:37:47 [INFO] An error occurred during code generation: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-10-20 17:37:47 [INFO] Stack Trace:
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 724, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 652, in completion
+    ) = self.make_sync_openai_chat_completion_request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/logging_utils.py", line 149, in sync_wrapper
+    result = func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 471, in make_sync_openai_chat_completion_request
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 453, in make_sync_openai_chat_completion_request
+    raw_response = openai_client.chat.completions.with_raw_response.create(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 929, in create
+    return self._post(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1276, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 949, in request
+    return self._request(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/openai/_base_client.py", line 1057, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1799, in completion
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 1772, in completion
+    response = openai_chat_completions.completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/llms/openai/openai.py", line 735, in completion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/core/code_generation/base.py", line 34, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai/llm/base.py", line 172, in generate_code
+    response = self.call(instruction, context)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/pandasai_litellm/litellm.py", line 68, in call
+    completion(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1255, in wrapper
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/utils.py", line 1133, in wrapper
+    result = original_function(*args, **kwargs)
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/main.py", line 3184, in completion
+    raise exception_type(
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2217, in exception_type
+    raise e
+  File "/home/szekeres/anaconda3/envs/streamlit-apps/lib/python3.10/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 396, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+
+2025-10-20 17:37:47 [INFO] Maximum retry attempts exceeded. Last error: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: your-api*****here. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-10-20 17:40:10 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Hello
+2025-10-20 17:40:10 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:40:10 [INFO] Prompt ID: 4e97c824-b6ea-454c-88f3-dc6513539e15
+2025-10-20 17:40:10 [INFO] Generating new code...
+2025-10-20 17:40:10 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Hello
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:40:21 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:40:21 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Execute a SQL query to select data from the table. 
+# For demonstration purposes, I'll select all records from the table.
+sql_query = """
+SELECT * FROM table_e54848cb5874e32b206ade18da53aa75
+"""
+dataframe = execute_sql_query(sql_query)
+
+# Declare result var as a dictionary with type and value:
+result = {
+    "type": "dataframe",
+    "value": dataframe
+}
+2025-10-20 17:40:21 [INFO] Validating code requirements...
+2025-10-20 17:40:21 [INFO] Code validation successful.
+2025-10-20 17:40:21 [INFO] Cleaning the generated code...
+2025-10-20 17:40:22 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT * FROM table_e54848cb5874e32b206ade18da53aa75
+"""
+dataframe = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': dataframe}
+2025-10-20 17:40:22 [INFO] Response generated successfully.
+2025-10-20 17:41:24 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Hello
+2025-10-20 17:41:24 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:41:24 [INFO] Prompt ID: a9b52ff0-ea31-439c-a16f-ed8f983cf00a
+2025-10-20 17:41:24 [INFO] Generating new code...
+2025-10-20 17:41:24 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Hello
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:41:34 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:41:34 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# SQL query to extract the necessary data
+sql_query = """
+SELECT *
+FROM table_e54848cb5874e32b206ade18da53aa75
+"""
+
+# Execute the SQL query to obtain the data
+dataframe = execute_sql_query(sql_query)
+
+# Since the question doesn't specify any specific analysis or visualization, I'll return the dataframe
+result = { "type": "dataframe", "value": dataframe }
+2025-10-20 17:41:34 [INFO] Validating code requirements...
+2025-10-20 17:41:34 [INFO] Code validation successful.
+2025-10-20 17:41:34 [INFO] Cleaning the generated code...
+2025-10-20 17:41:34 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT *
+FROM table_e54848cb5874e32b206ade18da53aa75
+"""
+dataframe = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': dataframe}
+2025-10-20 17:41:34 [INFO] Response generated successfully.
+2025-10-20 17:41:40 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:49:11 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+2025-10-20 17:49:11 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:49:11 [INFO] Prompt ID: 106bb75a-d1d5-4a37-8d6e-096269a76f93
+2025-10-20 17:49:11 [INFO] Generating new code...
+2025-10-20 17:49:11 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:49:18 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:49:18 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+
+# Function to execute the SQL query
+def execute_sql_query(sql_query: str) -> pd.DataFrame:
+    """This method connects to the database, executes the sql query and returns the dataframe."""
+    # This function is assumed to be defined already, as per the problem statement.
+    pass
+
+# Write code to process the data for required analysis
+sql_query = """
+SELECT 
+    Vendor,
+    COUNT(*) as negative_feedback_count
+FROM 
+    table_e54848cb5874e32b206ade18da53aa75
+WHERE
+    Semantic = 'negative'
+GROUP BY 
+    Vendor
+ORDER BY 
+    negative_feedback_count DESC;
+"""
+
+# Execute the query
+feedback_summary_df = execute_sql_query(sql_query)
+
+# Declare result variable: 
+result = { "type": "dataframe", "value": feedback_summary_df }
+2025-10-20 17:49:18 [INFO] Validating code requirements...
+2025-10-20 17:49:18 [INFO] Code validation successful.
+2025-10-20 17:49:18 [INFO] Cleaning the generated code...
+2025-10-20 17:49:18 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT 
+    Vendor,
+    COUNT(*) as negative_feedback_count
+FROM 
+    table_e54848cb5874e32b206ade18da53aa75
+WHERE
+    Semantic = 'negative'
+GROUP BY 
+    Vendor
+ORDER BY 
+    negative_feedback_count DESC;
+"""
+feedback_summary_df = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': feedback_summary_df}
+2025-10-20 17:49:18 [INFO] Response generated successfully.
+2025-10-20 17:49:22 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+2025-10-20 17:49:22 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:49:22 [INFO] Prompt ID: 7a969367-904a-4d7b-ad72-4677196d4ee5
+2025-10-20 17:49:22 [INFO] Generating new code...
+2025-10-20 17:49:22 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:49:32 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:49:32 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+# Define SQL query to aggregate and sort data
+sql_query = """
+SELECT 
+    Vendor, 
+    COUNT(*) as NumberOfComplaints 
+FROM 
+    table_e54848cb5874e32b206ade18da53aa75 
+GROUP BY 
+    Vendor 
+ORDER BY 
+    NumberOfComplaints DESC
+"""
+
+# Execute SQL query
+complaints_df = execute_sql_query(sql_query)
+
+# Declare result variable
+result = {
+    "type": "dataframe",
+    "value": complaints_df
+}
+2025-10-20 17:49:32 [INFO] Validating code requirements...
+2025-10-20 17:49:32 [INFO] Code validation successful.
+2025-10-20 17:49:32 [INFO] Cleaning the generated code...
+2025-10-20 17:49:32 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT 
+    Vendor, 
+    COUNT(*) as NumberOfComplaints 
+FROM 
+    table_e54848cb5874e32b206ade18da53aa75 
+GROUP BY 
+    Vendor 
+ORDER BY 
+    NumberOfComplaints DESC
+"""
+complaints_df = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': complaints_df}
+2025-10-20 17:49:32 [INFO] Response generated successfully.
+2025-10-20 17:49:36 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:49:48 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+2025-10-20 17:49:48 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:49:48 [INFO] Prompt ID: 4b0caeae-30cd-485e-9861-8b11f9f7ae3d
+2025-10-20 17:49:48 [INFO] Generating new code...
+2025-10-20 17:49:48 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:49:55 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:49:55 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Define the SQL query to aggregate data
+sql_query = """
+SELECT Vendor, COUNT(*) AS negative_feedback_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY negative_feedback_count DESC
+"""
+
+# Execute the SQL query to gather feedback count per vendor
+feedback_data = execute_sql_query(sql_query)
+
+# Output the results in a structured format
+result = {
+    "type": "dataframe",
+    "value": feedback_data
+}
+2025-10-20 17:49:55 [INFO] Validating code requirements...
+2025-10-20 17:49:55 [INFO] Code validation successful.
+2025-10-20 17:49:55 [INFO] Cleaning the generated code...
+2025-10-20 17:49:55 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT Vendor, COUNT(*) AS negative_feedback_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY negative_feedback_count DESC
+"""
+feedback_data = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': feedback_data}
+2025-10-20 17:49:55 [INFO] Response generated successfully.
+2025-10-20 17:49:57 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:50:03 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+2025-10-20 17:50:03 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:50:03 [INFO] Prompt ID: 0a8fefb2-9c4c-4a4f-a783-3ab446096333
+2025-10-20 17:50:03 [INFO] Generating new code...
+2025-10-20 17:50:03 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:50:09 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:50:09 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+
+# Declare SQL query to aggregate the count of negative messages by vendor
+sql_query = """
+SELECT Vendor, COUNT(*) as Negative_Message_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY Negative_Message_Count DESC;
+"""
+
+# Execute SQL query
+result_df = execute_sql_query(sql_query)
+
+# Declare result variable
+result = { "type": "dataframe", "value": result_df }
+2025-10-20 17:50:09 [INFO] Validating code requirements...
+2025-10-20 17:50:09 [INFO] Code validation successful.
+2025-10-20 17:50:09 [INFO] Cleaning the generated code...
+2025-10-20 17:50:09 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT Vendor, COUNT(*) as Negative_Message_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY Negative_Message_Count DESC;
+"""
+result_df = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': result_df}
+2025-10-20 17:50:09 [INFO] Response generated successfully.
+2025-10-20 17:50:12 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:50:24 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+2025-10-20 17:50:24 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:50:24 [INFO] Prompt ID: 29a2d9b3-7587-41ae-8e6b-4e550e1ec579
+2025-10-20 17:50:24 [INFO] Generating new code...
+2025-10-20 17:50:24 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:50:35 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:50:35 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+
+# Use the function to execute the SQL query
+sql_query = """
+SELECT Vendor, COUNT(*) as negative_feedback_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY negative_feedback_count DESC;
+"""
+
+# Execute the SQL query and store the result in a dataframe
+negative_feedback_df = execute_sql_query(sql_query)
+
+# Declare result variable as a dictionary with type "dataframe"
+result = {
+    "type": "dataframe",
+    "value": negative_feedback_df
+}
+2025-10-20 17:50:35 [INFO] Validating code requirements...
+2025-10-20 17:50:35 [INFO] Code validation successful.
+2025-10-20 17:50:35 [INFO] Cleaning the generated code...
+2025-10-20 17:50:35 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT Vendor, COUNT(*) as negative_feedback_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY negative_feedback_count DESC;
+"""
+negative_feedback_df = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': negative_feedback_df}
+2025-10-20 17:50:35 [INFO] Response generated successfully.
+2025-10-20 17:50:36 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:51:10 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+2025-10-20 17:51:10 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:51:10 [INFO] Prompt ID: 5ff877f2-422a-4f25-b1c8-b67f97c16d2f
+2025-10-20 17:51:10 [INFO] Generating new code...
+2025-10-20 17:51:10 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:51:19 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:51:19 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Define the SQL query to count negative feedback instances per vendor
+sql_query = """
+SELECT Vendor, COUNT(*) AS negative_feedback_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY negative_feedback_count DESC
+"""
+
+# Execute the SQL query and store the result in a DataFrame
+result_df = execute_sql_query(sql_query)
+
+# Declare result var:
+result = { 
+    "type": "dataframe", 
+    "value": result_df 
+}
+2025-10-20 17:51:19 [INFO] Validating code requirements...
+2025-10-20 17:51:19 [INFO] Code validation successful.
+2025-10-20 17:51:19 [INFO] Cleaning the generated code...
+2025-10-20 17:51:19 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT Vendor, COUNT(*) AS negative_feedback_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY negative_feedback_count DESC
+"""
+result_df = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': result_df}
+2025-10-20 17:51:19 [INFO] Response generated successfully.
+2025-10-20 17:51:22 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:51:52 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Create a nice bar diagram showing the number of negative feedbacks per vendor.
+
+2025-10-20 17:51:52 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:51:52 [INFO] Prompt ID: c96352dc-3437-436f-83f5-a8705b297f8d
+2025-10-20 17:51:52 [INFO] Generating new code...
+2025-10-20 17:51:52 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Create a nice bar diagram showing the number of negative feedbacks per vendor.
+
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:52:01 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:52:01 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Connect to the database and execute SQL query to get the number of negative feedbacks per vendor
+sql_query = """
+    SELECT Vendor, COUNT(*) AS negative_feedback_count
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    GROUP BY Vendor
+    ORDER BY negative_feedback_count DESC
+"""
+vendor_feedback_df = execute_sql_query(sql_query)
+
+# Plotting the bar diagram
+plt.figure(figsize=(10, 6))
+plt.bar(vendor_feedback_df['Vendor'], vendor_feedback_df['negative_feedback_count'], color='skyblue')
+plt.xlabel('Vendor')
+plt.ylabel('Number of Negative Feedbacks')
+plt.title('Number of Negative Feedbacks per Vendor')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Save the plot as an image file
+plot_file = 'negative_feedbacks_per_vendor.png'
+plt.savefig(plot_file)
+plt.show()
+
+# Declare result var
+result = { "type": "plot", "value": plot_file }
+2025-10-20 17:52:01 [INFO] Validating code requirements...
+2025-10-20 17:52:01 [INFO] Code validation successful.
+2025-10-20 17:52:01 [INFO] Cleaning the generated code...
+2025-10-20 17:52:01 [INFO] Executing code: import pandas as pd
+import matplotlib.pyplot as plt
+sql_query = """
+    SELECT Vendor, COUNT(*) AS negative_feedback_count
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    GROUP BY Vendor
+    ORDER BY negative_feedback_count DESC
+"""
+vendor_feedback_df = execute_sql_query(sql_query)
+plt.figure(figsize=(10, 6))
+plt.bar(vendor_feedback_df['Vendor'], vendor_feedback_df['negative_feedback_count'], color='skyblue')
+plt.xlabel('Vendor')
+plt.ylabel('Number of Negative Feedbacks')
+plt.title('Number of Negative Feedbacks per Vendor')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plot_file = 'exports/charts/temp_chart_310d3310-52e8-4ea5-8d8f-e1387c37c0f9.png'
+plt.savefig(plot_file)
+result = {'type': 'plot', 'value': plot_file}
+2025-10-20 17:52:01 [INFO] Response generated successfully.
+2025-10-20 17:52:04 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:53:41 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Create a nice bar diagram showing the number of negative feedbacks per vendor.
+
+2025-10-20 17:53:41 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:53:41 [INFO] Prompt ID: bf1c6010-8aa4-4602-bfb2-0c9669cd534d
+2025-10-20 17:53:41 [INFO] Generating new code...
+2025-10-20 17:53:41 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts. Question: Create a nice bar diagram showing the number of negative feedbacks per vendor.
+
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:53:50 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:53:50 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Define the SQL query to fetch and aggregate the data
+sql_query = """
+SELECT Vendor, COUNT(*) as negative_feedback_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY negative_feedback_count DESC
+"""
+
+# Execute the SQL query and store the result in a dataframe
+feedback_df = execute_sql_query(sql_query)
+
+# Plot a bar diagram
+plt.figure(figsize=(10, 6))
+plt.bar(feedback_df['Vendor'], feedback_df['negative_feedback_count'], color='skyblue')
+plt.title('Number of Negative Feedbacks per Vendor')
+plt.xlabel('Vendor')
+plt.ylabel('Number of Negative Feedbacks')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Save the plot to a file
+plot_filename = 'negative_feedbacks_per_vendor.png'
+plt.savefig(plot_filename)
+plt.close()
+
+# Declare result variable with plot type
+result = { "type": "plot", "value": plot_filename }
+2025-10-20 17:53:50 [INFO] Validating code requirements...
+2025-10-20 17:53:50 [INFO] Code validation successful.
+2025-10-20 17:53:50 [INFO] Cleaning the generated code...
+2025-10-20 17:53:50 [INFO] Executing code: import pandas as pd
+import matplotlib.pyplot as plt
+sql_query = """
+SELECT Vendor, COUNT(*) as negative_feedback_count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY negative_feedback_count DESC
+"""
+feedback_df = execute_sql_query(sql_query)
+plt.figure(figsize=(10, 6))
+plt.bar(feedback_df['Vendor'], feedback_df['negative_feedback_count'], color='skyblue')
+plt.title('Number of Negative Feedbacks per Vendor')
+plt.xlabel('Vendor')
+plt.ylabel('Number of Negative Feedbacks')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plot_filename = 'exports/charts/temp_chart_813b2d67-0d15-41d2-b674-4562587cc45e.png'
+plt.savefig(plot_filename)
+plt.close()
+result = {'type': 'plot', 'value': plot_filename}
+2025-10-20 17:53:50 [INFO] Response generated successfully.
+2025-10-20 17:53:56 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:56:16 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Current Question: 
+2025-10-20 17:56:16 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:56:16 [INFO] Prompt ID: 1139a1c3-6529-451f-8bc9-d38b915e719b
+2025-10-20 17:56:16 [INFO] Generating new code...
+2025-10-20 17:56:16 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Current Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:56:27 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:56:27 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Execute SQL query to get the number of negative experiences per vendor for 'user_1'
+query = """
+SELECT
+    Vendor,
+    COUNT(*) as Negative_Feedback_Count
+FROM
+    table_e54848cb5874e32b206ade18da53aa75
+WHERE
+    conv_id = 'user_1'
+GROUP BY
+    Vendor
+ORDER BY
+    Negative_Feedback_Count DESC
+"""
+
+# Fetch the result using the execute_sql_query function
+negative_feedback_df = execute_sql_query(query)
+
+# Declare result var: 
+result = { "type": "dataframe", "value": negative_feedback_df }
+2025-10-20 17:56:27 [INFO] Validating code requirements...
+2025-10-20 17:56:27 [INFO] Code validation successful.
+2025-10-20 17:56:27 [INFO] Cleaning the generated code...
+2025-10-20 17:56:27 [INFO] Executing code: import pandas as pd
+query = """
+SELECT
+    Vendor,
+    COUNT(*) as Negative_Feedback_Count
+FROM
+    table_e54848cb5874e32b206ade18da53aa75
+WHERE
+    conv_id = 'user_1'
+GROUP BY
+    Vendor
+ORDER BY
+    Negative_Feedback_Count DESC
+"""
+negative_feedback_df = execute_sql_query(query)
+result = {'type': 'dataframe', 'value': negative_feedback_df}
+2025-10-20 17:56:27 [INFO] Response generated successfully.
+2025-10-20 17:56:33 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1:   Vendor  Negative_Feedback_Count
+0  apple                        2
+1     hp                        1
+2   sony                        1
+3   dell                        1
+4     lg                        1
+
+Current Question: 
+2025-10-20 17:56:33 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:56:33 [INFO] Prompt ID: c48fb295-af15-4b94-9d0e-dda68f7fa14e
+2025-10-20 17:56:33 [INFO] Generating new code...
+2025-10-20 17:56:33 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1:   Vendor  Negative_Feedback_Count
+0  apple                        2
+1     hp                        1
+2   sony                        1
+3   dell                        1
+4     lg                        1
+
+Current Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:56:43 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:56:43 [INFO] Code Generated:
+# Import the required dependencies
+import pandas as pd
+
+# Define the function to execute the SQL query and obtain the result as a DataFrame
+def execute_sql_query(sql_query: str) -> pd.DataFrame:
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+    # Connectivity and query execution logic simulated here
+    pass 
+
+# Write SQL query to get negative feedback count per vendor
+sql_query = """
+SELECT Vendor, COUNT(*) as Negative_Feedback_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+GROUP BY Vendor
+ORDER BY Negative_Feedback_Count DESC
+"""
+
+# Execute SQL query and store result in DataFrame
+df_result = execute_sql_query(sql_query)
+
+# Declare result variable in the specified format
+result = {
+    "type": "dataframe",
+    "value": df_result
+}
+
+# For demonstration, assuming execute_sql_query returns a mock DataFrame
+# result['value'] should be replaced with the actual DataFrame from the 'execute_sql_query'
+2025-10-20 17:56:43 [INFO] Validating code requirements...
+2025-10-20 17:56:43 [INFO] Code validation successful.
+2025-10-20 17:56:43 [INFO] Cleaning the generated code...
+2025-10-20 17:56:43 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT Vendor, COUNT(*) as Negative_Feedback_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+GROUP BY Vendor
+ORDER BY Negative_Feedback_Count DESC
+"""
+df_result = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': df_result}
+2025-10-20 17:56:43 [INFO] Response generated successfully.
+2025-10-20 17:56:47 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:57:31 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1:   Vendor  Negative_Feedback_Count
+0  apple                        2
+1     hp                        1
+2   sony                        1
+3   dell                        1
+4     lg                        1
+
+Q2: 
+A2: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Current Question: Can you give me from these the top five in a list?
+
+2025-10-20 17:57:31 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:57:31 [INFO] Prompt ID: bb75576a-3bb3-4e42-b651-2704f5f38f79
+2025-10-20 17:57:31 [INFO] Generating new code...
+2025-10-20 17:57:31 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1:   Vendor  Negative_Feedback_Count
+0  apple                        2
+1     hp                        1
+2   sony                        1
+3   dell                        1
+4     lg                        1
+
+Q2: 
+A2: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Current Question: Can you give me from these the top five in a list?
+
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:57:43 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:57:43 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Execute SQL query to get the top five vendors with the highest negative feedback count
+query = """
+SELECT Vendor, COUNT(*) as Negative_Feedback_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+GROUP BY Vendor
+ORDER BY Negative_Feedback_Count DESC
+LIMIT 5
+"""
+
+# Fetch the result in a DataFrame
+result_df = execute_sql_query(query)
+
+# Convert the resulting DataFrame to a list of dictionaries for better readability
+top_five_list = result_df.to_dict(orient="records")
+
+# Declare result var
+result = {
+    "type": "dataframe",
+    "value": result_df
+}
+
+# or if you prefer, we could output the list format
+# result = {
+#     "type": "string",
+#     "value": str(top_five_list)
+# }
+2025-10-20 17:57:43 [INFO] Validating code requirements...
+2025-10-20 17:57:43 [INFO] Code validation successful.
+2025-10-20 17:57:43 [INFO] Cleaning the generated code...
+2025-10-20 17:57:43 [INFO] Executing code: import pandas as pd
+query = """
+SELECT Vendor, COUNT(*) as Negative_Feedback_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+GROUP BY Vendor
+ORDER BY Negative_Feedback_Count DESC
+LIMIT 5
+"""
+result_df = execute_sql_query(query)
+top_five_list = result_df.to_dict(orient='records')
+result = {'type': 'dataframe', 'value': result_df}
+2025-10-20 17:57:43 [INFO] Response generated successfully.
+2025-10-20 17:57:45 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:58:46 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1:   Vendor  Negative_Feedback_Count
+0  apple                        2
+1     hp                        1
+2   sony                        1
+3   dell                        1
+4     lg                        1
+
+Q2: 
+A2: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Q3: Can you give me from these the top five in a list?
+
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Current Question: Can you give me from these the top five in a list?
+
+2025-10-20 17:58:46 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:58:46 [INFO] Prompt ID: 10737e3e-470a-4dc4-b88d-67328cab2d05
+2025-10-20 17:58:46 [INFO] Generating new code...
+2025-10-20 17:58:46 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1:   Vendor  Negative_Feedback_Count
+0  apple                        2
+1     hp                        1
+2   sony                        1
+3   dell                        1
+4     lg                        1
+
+Q2: 
+A2: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Q3: Can you give me from these the top five in a list?
+
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Current Question: Can you give me from these the top five in a list?
+
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:58:54 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:58:54 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# SQL query to get the top five vendors based on negative feedback counts
+sql_query = """
+    SELECT Vendor, COUNT(Semantic) AS Negative_Feedback_Count
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    WHERE Semantic = 'negative'
+    GROUP BY Vendor
+    ORDER BY Negative_Feedback_Count DESC
+    LIMIT 5
+"""
+
+# Execute the SQL query
+top_vendors_df = execute_sql_query(sql_query)
+
+# Extract the vendors and their feedback count into a list of tuples
+top_vendors_list = top_vendors_df[['Vendor', 'Negative_Feedback_Count']].apply(tuple, axis=1).tolist()
+
+# Declare result var
+result = {
+    "type": "list",
+    "value": top_vendors_list
+}
+2025-10-20 17:58:54 [INFO] Validating code requirements...
+2025-10-20 17:58:54 [INFO] Code validation successful.
+2025-10-20 17:58:54 [INFO] Cleaning the generated code...
+2025-10-20 17:58:54 [INFO] Executing code: import pandas as pd
+sql_query = """
+    SELECT Vendor, COUNT(Semantic) AS Negative_Feedback_Count
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    WHERE Semantic = 'negative'
+    GROUP BY Vendor
+    ORDER BY Negative_Feedback_Count DESC
+    LIMIT 5
+"""
+top_vendors_df = execute_sql_query(sql_query)
+top_vendors_list = top_vendors_df[['Vendor', 'Negative_Feedback_Count']].apply(tuple, axis=1).tolist()
+result = {'type': 'list', 'value': top_vendors_list}
+2025-10-20 17:59:04 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1:   Vendor  Negative_Feedback_Count
+0  apple                        2
+1     hp                        1
+2   sony                        1
+3   dell                        1
+4     lg                        1
+
+Q2: 
+A2: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Q3: Can you give me from these the top five in a list?
+
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Current Question: 
+2025-10-20 17:59:04 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:59:04 [INFO] Prompt ID: a0f3dbe0-d763-49d4-a70a-17a028ee8562
+2025-10-20 17:59:04 [INFO] Generating new code...
+2025-10-20 17:59:04 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1:   Vendor  Negative_Feedback_Count
+0  apple                        2
+1     hp                        1
+2   sony                        1
+3   dell                        1
+4     lg                        1
+
+Q2: 
+A2: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Q3: Can you give me from these the top five in a list?
+
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Current Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:59:08 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:59:08 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Execute SQL query to get the top five vendors with the highest negative feedback count
+query = """
+SELECT Vendor, COUNT(*) as Negative_Feedback_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+GROUP BY Vendor
+ORDER BY Negative_Feedback_Count DESC
+LIMIT 5
+"""
+# Getting the result as a dataframe
+result_df = execute_sql_query(query)
+
+# Declare result variable
+result = {
+    "type": "dataframe",
+    "value": result_df
+}
+2025-10-20 17:59:08 [INFO] Validating code requirements...
+2025-10-20 17:59:08 [INFO] Code validation successful.
+2025-10-20 17:59:08 [INFO] Cleaning the generated code...
+2025-10-20 17:59:08 [INFO] Executing code: import pandas as pd
+query = """
+SELECT Vendor, COUNT(*) as Negative_Feedback_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+GROUP BY Vendor
+ORDER BY Negative_Feedback_Count DESC
+LIMIT 5
+"""
+result_df = execute_sql_query(query)
+result = {'type': 'dataframe', 'value': result_df}
+2025-10-20 17:59:08 [INFO] Response generated successfully.
+2025-10-20 17:59:10 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:59:14 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Q2: Can you give me from these the top five in a list?
+
+A2: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Q3: 
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below lists various vendors along with the count of negative feedback they have received:
+
+| Vendor | Negative Feedback Count |
+|--------|--------------------------|
+| LG     | 19                       |
+| Apple  | 16                       |
+| Dell   | 15                       |
+| Sony   | 11                       |
+| HP     | 11                       |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Current Question: 
+2025-10-20 17:59:14 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:59:14 [INFO] Prompt ID: f6c55974-aaf6-4c86-9bed-a9709d3460b5
+2025-10-20 17:59:14 [INFO] Generating new code...
+2025-10-20 17:59:14 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Q2: Can you give me from these the top five in a list?
+
+A2: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Q3: 
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below lists various vendors along with the count of negative feedback they have received:
+
+| Vendor | Negative Feedback Count |
+|--------|--------------------------|
+| LG     | 19                       |
+| Apple  | 16                       |
+| Dell   | 15                       |
+| Sony   | 11                       |
+| HP     | 11                       |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Current Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:59:23 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:59:23 [INFO] Code Generated:
+# Import the required dependency
+import pandas as pd
+
+# Define the function to execute the SQL query and obtain results
+def get_top_negative_feedback_vendors():
+    # SQL query to aggregate and sort negative feedback count by vendor
+    sql_query = """
+        SELECT Vendor, COUNT(*) AS Negative_Feedback_Count
+        FROM table_e54848cb5874e32b206ade18da53aa75
+        WHERE Semantic = 'negative'
+        GROUP BY Vendor
+        ORDER BY Negative_Feedback_Count DESC
+        LIMIT 5;
+    """
+  
+    # Execute the SQL query
+    result_df = execute_sql_query(sql_query)
+    return result_df
+
+# Get the top 5 vendors with the most negative feedback
+top_negative_feedback_vendors = get_top_negative_feedback_vendors()
+
+# Declare the result variable
+result = {
+    "type": "dataframe",
+    "value": top_negative_feedback_vendors
+}
+
+# The result will contain a dataframe with the top 5 vendors sorted by negative feedback count
+2025-10-20 17:59:23 [INFO] Validating code requirements...
+2025-10-20 17:59:23 [INFO] Code validation successful.
+2025-10-20 17:59:23 [INFO] Cleaning the generated code...
+2025-10-20 17:59:23 [INFO] Executing code: import pandas as pd
+
+
+def get_top_negative_feedback_vendors():
+    sql_query = """
+        SELECT Vendor, COUNT(*) AS Negative_Feedback_Count
+        FROM table_e54848cb5874e32b206ade18da53aa75
+        WHERE Semantic = 'negative'
+        GROUP BY Vendor
+        ORDER BY Negative_Feedback_Count DESC
+        LIMIT 5;
+    """
+    result_df = execute_sql_query(sql_query)
+    return result_df
+
+
+top_negative_feedback_vendors = get_top_negative_feedback_vendors()
+result = {'type': 'dataframe', 'value': top_negative_feedback_vendors}
+2025-10-20 17:59:23 [INFO] Response generated successfully.
+2025-10-20 17:59:26 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Q2: Can you give me from these the top five in a list?
+
+A2: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Q3: 
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below lists various vendors along with the count of negative feedback they have received:
+
+| Vendor | Negative Feedback Count |
+|--------|--------------------------|
+| LG     | 19                       |
+| Apple  | 16                       |
+| Dell   | 15                       |
+| Sony   | 11                       |
+| HP     | 11                       |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Current Question: 
+2025-10-20 17:59:26 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:59:26 [INFO] Prompt ID: 27aa8f3c-daa2-4bfe-a07d-7554e8742672
+2025-10-20 17:59:26 [INFO] Generating new code...
+2025-10-20 17:59:26 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: 
+A1: Certainly! Below is the reformatted content with the tabular data converted into a Markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the count of negative feedback received by various vendors:
+
+| Vendor  | Negative Feedback Count |
+|---------|-------------------------|
+| LG      | 19                      |
+| Apple   | 16                      |
+| Dell    | 15                      |
+| Sony    | 11                      |
+| HP      | 11                      |
+| Lenovo  | 10                      |
+| Samsung | 10                      |
+| Asus    | 7                       |
+
+---
+
+This table provides a clear view of the negative feedback counts associated with each vendor.
+
+Q2: Can you give me from these the top five in a list?
+
+A2: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Q3: 
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below lists various vendors along with the count of negative feedback they have received:
+
+| Vendor | Negative Feedback Count |
+|--------|--------------------------|
+| LG     | 19                       |
+| Apple  | 16                       |
+| Dell   | 15                       |
+| Sony   | 11                       |
+| HP     | 11                       |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Current Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 17:59:27 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:59:38 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:59:38 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Define the SQL query to get the vendor and their count of negative feedbacks, sorted in descending order
+sql_query = """
+SELECT Vendor, COUNT(*) as Negative_Feedback_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY Negative_Feedback_Count DESC
+LIMIT 5
+"""
+
+# Execute the SQL query and fetch the results into a dataframe
+df_negative_feedback = execute_sql_query(sql_query)
+
+# Define the final result dictionary as a dataframe type
+result = {
+    "type": "dataframe",
+    "value": df_negative_feedback
+}
+2025-10-20 17:59:38 [INFO] Validating code requirements...
+2025-10-20 17:59:38 [INFO] Code validation successful.
+2025-10-20 17:59:38 [INFO] Cleaning the generated code...
+2025-10-20 17:59:38 [INFO] Executing code: import pandas as pd
+sql_query = """
+SELECT Vendor, COUNT(*) as Negative_Feedback_Count
+FROM table_e54848cb5874e32b206ade18da53aa75
+WHERE Semantic = 'negative'
+GROUP BY Vendor
+ORDER BY Negative_Feedback_Count DESC
+LIMIT 5
+"""
+df_negative_feedback = execute_sql_query(sql_query)
+result = {'type': 'dataframe', 'value': df_negative_feedback}
+2025-10-20 17:59:38 [INFO] Response generated successfully.
+2025-10-20 17:59:41 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 17:59:51 [INFO] Question: You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: Can you give me from these the top five in a list?
+
+A1: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Q2: 
+A2: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below lists various vendors along with the count of negative feedback they have received:
+
+| Vendor | Negative Feedback Count |
+|--------|--------------------------|
+| LG     | 19                       |
+| Apple  | 16                       |
+| Dell   | 15                       |
+| Sony   | 11                       |
+| HP     | 11                       |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Q3: 
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the number of negative feedbacks received by various vendors:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| HP     | 11                      |
+| Sony   | 11                      |
+
+--- 
+
+This table provides a clear comparison of the negative feedback counts for each vendor.
+
+Current Question: 
+2025-10-20 17:59:51 [INFO] Running PandaAI with litellm LLM...
+2025-10-20 17:59:51 [INFO] Prompt ID: 0a0801cf-f5b5-4d78-ba30-d702bfbb41e2
+2025-10-20 17:59:51 [INFO] Generating new code...
+2025-10-20 17:59:51 [INFO] Using Prompt: <tables>
+
+<table dialect="duckdb" table_name="table_e54848cb5874e32b206ade18da53aa75" dimensions="99x5">
+timestamp,conv_id,Messages,Vendor,Semantic
+2025-05-01 21:28:37.011732,user_1,"Subject: Frustrations with My LG Tablet
+
+Hi there,
+
+I hope this message finds you well. I'm writing to express my growing frustration with my LG tablet, which I purchased a few months ago. From the ge…",lg,negative
+2025-05-04 00:48:40.209992,user_1,"Subject: Frustrating Issues with My Recent Apple Laptop Purchase
+
+Dear Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration and disappointment with my recent purch…",apple,negative
+2025-05-10 00:27:40.800025,user_1,"Subject: Frustrated with My Sony Phone Experience
+
+Hi Sony Support Team,
+
+I hope this message finds you well. I am writing to express my dissatisfaction with my recent experience using my Sony Xperia …",sony,negative
+2025-05-11 09:46:05.178010,user_1,"Subject: Frustration with My New HP Laptop
+
+Hi HP Support,
+
+I hope this message finds you well. I'm writing to express my disappointment with a recent purchase of an HP laptop. I bought the HP Pavilio…",hp,negative
+2025-05-15 08:53:53.971679,user_1,"Subject: Frustration with Apple TV - Constant Connectivity Issues
+
+Hi Apple Support,
+
+I hope this message finds you well. I'm writing to express my frustration with my Apple TV device. I’ve been a lon…",apple,negative
+</table>
+
+
+</tables>
+
+You are already provided with the following functions that you can call:
+<function>
+def execute_sql_query(sql_query: str) -> pd.Dataframe
+    """This method connects to the database, executes the sql query and returns the dataframe"""
+</function>
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ You are an expert data analyst who provides highly detailed answers based on CSV data in English, and if necessary, generates matplotlib charts.
+
+Previous conversation:
+Q1: Can you give me from these the top five in a list?
+
+A1: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity and structure:
+
+---
+
+### Vendor Negative Feedback Summary
+
+The table below presents the count of negative feedback received by each vendor:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| Sony   | 11                      |
+| HP     | 11                      |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Q2: 
+A2: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for better clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below lists various vendors along with the count of negative feedback they have received:
+
+| Vendor | Negative Feedback Count |
+|--------|--------------------------|
+| LG     | 19                       |
+| Apple  | 16                       |
+| Dell   | 15                       |
+| Sony   | 11                       |
+| HP     | 11                       |
+
+---
+
+This table provides a clear overview of the negative feedback counts for each vendor.
+
+Q3: 
+A3: Certainly! Below is the reformatted content with the tabular data converted into a markdown table for clarity:
+
+---
+
+### Vendor Negative Feedback Count
+
+The table below presents the number of negative feedbacks received by various vendors:
+
+| Vendor | Negative Feedback Count |
+|--------|-------------------------|
+| LG     | 19                      |
+| Apple  | 16                      |
+| Dell   | 15                      |
+| HP     | 11                      |
+| Sony   | 11                      |
+
+--- 
+
+This table provides a clear comparison of the negative feedback counts for each vendor.
+
+Current Question: 
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+Generate python code and return full updated code:
+
+### Note: Use only relevant table for query and do aggregation, sorting, joins and grouby through sql query
+2025-10-20 18:00:09 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-20 18:00:09 [INFO] Code Generated:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+def get_vendor_negative_feedback():
+    # SQL query to aggregate and get the count of negative feedback for each vendor
+    sql_query = """
+    SELECT Vendor, COUNT(*) AS NegativeFeedbackCount
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    WHERE Semantic = 'negative'
+    GROUP BY Vendor
+    ORDER BY NegativeFeedbackCount DESC
+    """
+    
+    # Execute the query and store the result in a dataframe
+    df = execute_sql_query(sql_query)
+    
+    return df
+
+# Call the function to get the result
+negative_feedback_df = get_vendor_negative_feedback()
+
+# Declare result var 
+result = {
+    "type": "dataframe",
+    "value": negative_feedback_df
+}
+
+# Print out the resulting dataframe
+print(result['value'])
+2025-10-20 18:00:09 [INFO] Validating code requirements...
+2025-10-20 18:00:09 [INFO] Code validation successful.
+2025-10-20 18:00:09 [INFO] Cleaning the generated code...
+2025-10-20 18:00:09 [INFO] Executing code: import pandas as pd
+
+
+def get_vendor_negative_feedback():
+    sql_query = """
+    SELECT Vendor, COUNT(*) AS NegativeFeedbackCount
+    FROM table_e54848cb5874e32b206ade18da53aa75
+    WHERE Semantic = 'negative'
+    GROUP BY Vendor
+    ORDER BY NegativeFeedbackCount DESC
+    """
+    df = execute_sql_query(sql_query)
+    return df
+
+
+negative_feedback_df = get_vendor_negative_feedback()
+result = {'type': 'dataframe', 'value': negative_feedback_df}
+print(result['value'])
+2025-10-20 18:00:09 [INFO] Response generated successfully.
+2025-10-20 18:00:14 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"

@@ -4,10 +4,11 @@ This is a Streamlit-based web application that enables users to analyze and inte
 
 ## 🚀 Features
 
-* **ChatCSV**: Ask natural language questions about a CSV file
+* **ChatCSV**: Ask natural language questions about a CSV file with conversational memory (remembers last 3 questions)
 * **Vendor Feedback Analysis**: Automatically extract vendor names and classify sentiment using OpenAI GPT
 * **Predefined Reports**: Generate summary reports and visualizations
 * **Conversation Grouping**: Merge message streams by time window
+* **Interactive Examples**: Clickable example questions for quick exploration
 
 ## 🧰 Tech Stack
 
