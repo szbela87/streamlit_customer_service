@@ -50,18 +50,14 @@ pip install -r requirements.txt
 
 ### 4. Set your OpenAI API key
 
-Create a `.env` file in the root directory with:
-
-```
-OPENAI_API_KEY=your-api-key-here
-```
-
-Alternatively, use `secrets.toml` when deploying to Streamlit Cloud:
+Create a `.streamlit/secrets.toml` file in the root directory:
 
 ```toml
 # .streamlit/secrets.toml
 OPENAI_API_KEY = "your-api-key-here"
 ```
+
+This file is used for both local development and Streamlit Cloud deployment.
 
 ## ▶️ Run Locally
 
