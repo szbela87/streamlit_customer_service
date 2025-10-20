@@ -4,20 +4,20 @@ This is a Streamlit-based web application that enables users to analyze and inte
 
 ## 🚀 Features
 
-* **ChatCSV**: Ask natural language questions about a CSV file with conversational memory (remembers last 3 questions)
-* **Vendor Feedback Analysis**: Automatically extract vendor names and classify sentiment using OpenAI GPT
-* **Predefined Reports**: Generate summary reports and visualizations
-* **Conversation Grouping**: Merge message streams by time window
-* **Interactive Examples**: Clickable example questions for quick exploration
+- **ChatCSV**: Ask natural language questions about a CSV file with conversational memory (remembers last 3 questions)
+- **Vendor Feedback Analysis**: Automatically extract vendor names and classify sentiment using OpenAI GPT
+- **Predefined Reports**: Generate summary reports and visualizations
+- **Conversation Grouping**: Merge message streams by time window
+- **Interactive Examples**: Clickable example questions for quick exploration
 
 ## 🧰 Tech Stack
 
-* [Streamlit](https://streamlit.io/)
-* [OpenAI API](https://platform.openai.com/)
-* [PandasAI](https://github.com/gventuri/pandas-ai)
-* [Python-dotenv](https://github.com/theskumar/python-dotenv)
-* [Matplotlib](https://matplotlib.org/)
-* [Pandas](https://pandas.pydata.org/)
+- [Streamlit](https://streamlit.io/)
+- [OpenAI API](https://platform.openai.com/)
+- [PandasAI](https://github.com/gventuri/pandas-ai)
+- [Python-dotenv](https://github.com/theskumar/python-dotenv)
+- [Matplotlib](https://matplotlib.org/)
+- [Pandas](https://pandas.pydata.org/)
 
 ## 📦 Installation
 
@@ -31,12 +31,14 @@ cd your-repo-name
 ### 2. (Optional) Create and activate a virtual environment
 
 **Option A: Using venv**
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 **Option B: Using conda**
+
 ```bash
 conda create -n streamlit-apps python=3.10 -y
 conda activate streamlit-apps
